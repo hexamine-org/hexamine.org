@@ -3,7 +3,7 @@ language: generic
 install:
   - wget -P lib/v86/build/ https://copy.sh/v86/build/libv86.js
   - wget -P lib/v86/bios/ https://copy.sh/v86/bios/{seabios.bin,vgabios.bin}
-  - wget -P lib/v86/images/ https://github.com/hexamine-org/hexamine.iso/releases/download/v0.2/hexamine.iso
+  - wget -P lib/v86/images/ https://github.com/hexamine-org/hexamine.iso/releases/download/v0.3/hexamine.iso
 
 deploy:
   provider: pages
