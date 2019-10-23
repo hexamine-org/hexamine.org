@@ -1,0 +1,17 @@
+language: generic
+
+install:
+  - wget -P lib/v86/build/ https://copy.sh/v86/build/libv86.js
+  - wget -P lib/v86/bios/ https://copy.sh/v86/bios/{seabios.bin,vgabios.bin}
+  - wget -P lib/v86/images/ https://github.com/hexamine-org/hexamine.iso/releases/download/v0.0/hexamine.iso
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: false
+  on:
+    branch: master
+  fqdn: hexamine.org
+  email: website@hexamine.org
+  name: hexamine website bot

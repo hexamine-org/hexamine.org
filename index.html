@@ -1,0 +1,37 @@
+<!doctype html>
+<title>hexamine</title>
+
+<style>
+	body {
+		background-color: black;
+	}
+</style>
+
+<script src="lib/v86/build/libv86.js"></script>
+<script>
+	"use strict";
+
+	window.onload = function () {
+		var emulator = window.emulator = new V86Starter({
+			memory_size: 512 * 1024 * 1024,
+			vga_memory_size: 2 * 1024 * 1024,
+			screen_container: document.getElementById("screen_container"),
+			bios: {
+				url: "lib/v86/bios/seabios.bin",
+			},
+			vga_bios: {
+				url: "lib/v86/bios/vgabios.bin",
+			},
+			cdrom: {
+				url: "lib/v86/images/hexamine.iso",
+			},
+			autostart: true,
+		});
+	}
+</script>
+
+<!-- A minimal structure for the ScreenAdapter defined in browser/screen.js -->
+<div id="screen_container">
+	<div style="white-space: pre; font: 1em monospace; line-height: 1em"></div>
+	<canvas style="display: none"></canvas>
+</div>
