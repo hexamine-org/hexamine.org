@@ -67,7 +67,7 @@
 		}
 
 		.header .heading {
-			font-family: monospace;
+			font-family: Consolas, monaco, monospace;
 			font-size: 24px;
 			line-height: 24px;
 			font-weight: 200;
@@ -95,7 +95,7 @@
 		}
 
 		.screen-container .emulator-screen .console {
-			font-family: monospace;
+			font-family: Consolas, monaco, monospace;
 			font-size: 16px;
 			line-height: 18px;
 			white-space: pre;
@@ -113,7 +113,7 @@
 		}
 
 		.footer .info {
-			font-family: monospace;
+			font-family: Consolas, monaco, monospace;
 			font-size: 12px;
 		}
 	</style>
@@ -144,9 +144,6 @@
 	<script src="lib/v86/build/libv86.js"></script>
 	<script>
 		window.onload = function () {
-			var image_name = 'minimal_linux_live_28-Jan-2018_32-bit_bios.iso';
-			var cdrom_url = '../download/2018/' + image_name;
-
 			var emulator = window.emulator = new V86Starter({
 				memory_size: 256 * 1024 * 1024,
 				vga_memory_size: 2 * 1024 * 1024,
