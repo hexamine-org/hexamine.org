@@ -1,5 +1,2 @@
-::sysinit:/etc/init.d/rcS
 console::respawn:-/bin/sh
-::shutdown:/etc/init.d/rcK
-::shutdown:/sbin/swapoff -a
-::shutdown:/bin/umount -a -r
+::once:welcome
