@@ -5,7 +5,7 @@ before_install:
   - tar xvf buildroot-2019.08.1.tar.gz
   - pushd buildroot-2019.08.1/
   - make BR2_EXTERNAL=../hexamine.iso/ hexa_defconfig
-  - make
+  - make > /dev/null
   - popd
   - cp buildroot-2019.08.1/output/images/rootfs.iso9660 lib/v86/images/hexamine.iso
   - rm -rf buildroot-2019.08.1/
