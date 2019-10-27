@@ -7,7 +7,7 @@ while getopts 'hk:' OPTION; do
       exit 1
       ;;
     k)
-      cat "/etc/hexamine/miners/$OPTARG/id_rsa.pub"
+      cat "/etc/hexamine/miners/$OPTARG/pk.pem"
       exit
       ;;
   esac
