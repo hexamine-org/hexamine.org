@@ -1,0 +1,2 @@
+Type `hello` to greet, type `miners` to see all miners of hexamine team or type `welcome` to see this message again.
+Feel free to use any command on this screen. 

@@ -13,3 +13,7 @@ else
 fi
 
 echo
+
+cat /etc/hexamine/welcome/help.txt
+
+echo
