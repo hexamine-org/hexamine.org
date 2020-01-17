@@ -14,6 +14,8 @@ install:
   - mkdir -p lib/v86/images/
   - cp buildroot-2019.08.1/output/images/rootfs.iso9660 lib/v86/images/hexamine.iso
   - rm -rf buildroot-2019.08.1/
+  - rm -rf buildroot-2019.08.1.tar.gz
+  - git clone https://github.com/hexamine-org/hexaminers.git
 
 deploy:
   provider: pages
