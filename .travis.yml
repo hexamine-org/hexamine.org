@@ -1,0 +1,29 @@
+language: generic
+
+before_install:
+  - wget https://buildroot.org/downloads/buildroot-2019.08.1.tar.gz
+  - tar xvf buildroot-2019.08.1.tar.gz
+  - pushd buildroot-2019.08.1/
+  - make BR2_EXTERNAL=../hexamine.iso/ hexa_defconfig
+  - make > /dev/null
+  - popd
+
+install:
+  - wget -P lib/v86/build/ https://copy.sh/v86/build/libv86.js
+  - wget -P lib/v86/bios/ https://copy.sh/v86/bios/{seabios.bin,vgabios.bin}
+  - mkdir -p lib/v86/images/
+  - cp buildroot-2019.08.1/output/images/rootfs.iso9660 lib/v86/images/hexamine.iso
+  - rm -rf buildroot-2019.08.1/
+  - rm -rf buildroot-2019.08.1.tar.gz
+  - git clone https://github.com/hexamine-org/hexaminers.git
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: false
+  on:
+    branch: master
+  fqdn: hexamine.org
+  email: website@hexamine.org
+  name: hexamine website bot

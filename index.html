@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="hexamine" />
+	<meta name="keywords" content="hexamine blockchain security research investment" />
+
+	<title>hexamine</title>
+
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			-webkit-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+			background-color: #000;
+		}
+
+		html .header .heading,
+		body .header .heading,
+		body .footer .info {
+			color: #fff;
+		}
+
+		*:focus {
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			outline: none;
+		}
+
+		.container {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			padding: 10px 50px;
+		}
+
+		@media screen and (max-width: 768px) {
+			.container {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+				flex-direction: column;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				align-items: center;
+				padding: 10px;
+			}
+		}
+
+		.header {
+			max-width: 1200px;
+			margin: 20px 0;
+		}
+
+		.header .heading {
+			font-family: Consolas, monaco, monospace;
+			font-size: 24px;
+			line-height: 24px;
+			font-weight: 200;
+			text-align: center;
+			margin: 0;
+			-webkit-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+		}
+
+		.header .heading.mini {
+			font-size: 14px;
+			line-height: 14px;
+			opacity: 0.6;
+		}
+
+		.screen-container {
+			max-width: 100%;
+			background-color: #000;
+			padding: 0 20px;
+			border: 1px solid #111;
+		}
+
+		.screen-container .emulator-screen {
+			margin: 10px 0;
+		}
+
+		.screen-container .emulator-screen .console {
+			font-family: Consolas, monaco, monospace;
+			font-size: 16px;
+			line-height: 18px;
+			white-space: pre;
+			min-width: 770px;
+		}
+
+		.screen-container input {
+			margin: 0 0 10px;
+			width: 100%;
+		}
+
+		.footer {
+			max-width: 1200px;
+			margin: 20px 0;
+		}
+
+		.footer .info {
+			font-family: Consolas, monaco, monospace;
+			font-size: 12px;
+		}
+	</style>
+</head>
+
+<body id="body">
+	<div class="container">
+		<div class="header">
+			<h1 class="heading">hexamine</h1>
+			<h1 class="heading mini">Blockchain - Security - Research</h1>
+		</div>
+
+		<div class="screen-container">
+			<div class="emulator-screen" id="screen_container" contenteditable="true">
+				<div class="console"></div>
+				<canvas style="display: none"></canvas>
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="info">
+				copyright © hexamine team 2019 - hexamine@hexamine.org -
+				<a href="https://github.com/hexamine-org">Github</a>
+			</div>
+		</div>
+	</div>
+
+	<script src="lib/v86/build/libv86.js"></script>
+	<script>
+		window.onload = function () {
+			var emulator = window.emulator = new V86Starter({
+				memory_size: 64 * 1024 * 1024,
+				vga_memory_size: 2 * 1024 * 1024,
+				screen_container: document.getElementById("screen_container"),
+				bios: {
+					url: "lib/v86/bios/seabios.bin",
+				},
+				vga_bios: {
+					url: "lib/v86/bios/vgabios.bin",
+				},
+				cdrom: {
+					url: "lib/v86/images/hexamine.iso",
+				},
+				autostart: true,
+			});
+		}
+	</script>
+</body>
+
+</html>

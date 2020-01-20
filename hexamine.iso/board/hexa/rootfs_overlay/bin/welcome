@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo
+
+cat /etc/hexamine/welcome/welcome.txt
+
+echo
+
+if [ $(echo $(($RANDOM%2))) -eq "0" ]; then
+  cat /etc/hexamine/welcome/HE卍A.txt
+else
+  cat /etc/hexamine/welcome/HE卐A.txt
+fi
+
+echo
+
+cat /etc/hexamine/welcome/help.txt
+
+echo

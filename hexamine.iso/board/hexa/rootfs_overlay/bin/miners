@@ -1,0 +1,18 @@
+#!/bin/sh
+
+while getopts 'hk:' OPTION; do
+  case "$OPTION" in
+    h)
+      echo "Usage: $(basename $0) [-h] [-k id]" >&2
+      exit 1
+      ;;
+    k)
+      cat "/etc/hexamine/miners/$OPTARG/pk.pem"
+      exit
+      ;;
+  esac
+done
+
+if [ $OPTIND -eq 1 ]; then
+  ls /etc/hexamine/miners
+fi

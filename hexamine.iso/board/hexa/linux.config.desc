@@ -1,0 +1,6 @@
+make tinyconfig
+make menuconfig
+
+# ["Executable file formats" > "Kernel support for ELF binaries"]
+# ["Executable file formats" > "Kernel support for scripts starting with #!"]
+# ["Device Drivers" > "Character devices" > "Enable TTY"];
